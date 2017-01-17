@@ -17,22 +17,21 @@ The turnstile data will tell you (after some data cleaning) how many people ente
 
 
 
+## The Problem
+The hardest part of an open-ended data science project is often defining concretely what your goal is. For example, if you work for a non-profit organization trying to 1) gather email subscribers who support your mission, and 2) collect donations,  which of those things is more important? And are you willing to sacrifice one for the other? The more variables you have to consider, the harder it is to determine their relative importance.
 
-Intro to the problem - 'this will be data analysis tips using MTA turnstile stuff as an example'
+For my first project at Metis Data Science Bootcamp, I worked with a team using passenger entrance/exit data from the New York subway system to determine the optimal placement of street canvassers (i.e. those wonderful people asking you to sign up for things.) Our very open-ended goal was to support the work of a non-profit that was looking to collect email addresses and, subsequently, donations. What follows are some thoughts on how to choose a concrete goal and implement it.
 
-Imagine you have [link]data from the MTA in New York City[/link] that shows this:
-EXAMPLE OF DATA
+For this project we needed to choose the "best" subway locations for canvassers to solicit email addresses... but it was up to us to determine what "best" might mean. Here are just some of the factors we thought to take into account:
+- volume of foot traffic into/out of the subway stations
+- income of passengers at each station
+- proximity to universities
+- proximity to tech hubs in NYC (this was relevant to the mission of the NPO, which was to increase representation of women in tech)
+- passenger responsiveness to solicitation (probably low during rush hour, higher at other times)
 
-Let's say you also think you might be able to find other data that's relevant to your goal - say, income data, or the locations of tech organizations within the city.
+Ultimately what we need is a list of the top 15 or so stations to send canvassers to. This means we need to rank each station. But how do we determine a rank from all of the variables that we want to consider? If a station is in the 90th percentile for traffic volume, but the 50th percentile for income, should it be ranked higher or lower than a station in the 50th percentile for traffic and the 90th percentile for income? And do we have to compute these rankings for different times of day, or different days of the week? It's easy to get lost in a sea of tradeoffs and special cases, and still not find a way to concretely determine what your goal is.
 
-Your process may consist of cleaning your data, exploring it, developing a concrete goal, merging other data sources, and visualizing your results.
-
-My first project for Metis Data Science bootcamp was...
-I know from my experience as a data analyst at 451 Research that the process of data cleaning and analysis has a great effect on the final outcome. As a first blog post I thought I'd write about the things I tried to keep in mind as I went through this process.
-
-## Exploratory Data Analysis
-The hardest part of an open-ended project can be defining a concrete objective. For this project we needed to choose the "best" subway locations, but it was up to us to determine what "best" might mean. For example, my group considered using station traffic, proximity to tech hubs, and residential income to choose our top locations. But how do we integrate those three variables into one final metric on which to rank the stations?
-
+## A Solution
 One approach is to write simple equations that describe what variables (in theory) affect your outcomes. For example, the number of people a street team signs up in a day ('S') is perhaps equal to the number of people they can engage in conversation in an hour ('E'), times the percentage of those people who are interested in the organization ('I'), times the number of hours the street team is out working ('H'). In other words:
 S = E * I * H
 200 people per hour * 3% are interested * 6 hours = 36 people signed up
@@ -58,3 +57,5 @@ D * 60000 * .1% = A = $43.2
 200 * 3% * 6 hours = S = 36
 S * 1% = D = .36
 D * 80000 * .1% = A = $28.8
+
+A = .001GEHIC
