@@ -28,9 +28,9 @@ One approach is to write simple equations that describe your outcomes in terms o
 ### Email Signups
 Let’s make a reasonable assumption: the number of people a street team signs up in a day is roughly equal to the number of people they talk to in an hour, times the percentage of people who are interested in the mission enough to sign up, times the number of hours the street team is out working. In other words:
 
-<p style="margin-left: 40px">S (signups) = T (number talked to per hour) * I (percent interested) * H (hours)</p>
+<p style="margin-left: 40px; color: gray;">S (signups) = T (number talked to per hour) * I (percent interested) * H (hours)</p>
 
-<p style="margin-left: 40px">200 people per hour * 3% are interested * 6 hours = 36 people signed up</p>
+<p style="margin-left: 40px; color: gray;">200 people per hour * 3% are interested * 6 hours = 36 people signed up</p>
 
 If we assume that 1) H will be set by the NPO's budget, and 2) our subway stations will have at least 200 people passing through per hour (an easy minimum to meet in NYC), then the only variable we can influence in this equation is I (interest), which we can do by targeting parts of the city where subway riders will be more interested in supporting women in tech.
 
@@ -39,7 +39,7 @@ From our equation we can also see that if we double the percentage of interested
 ### Donations
 So let’s say we’ve gained lots of email subscribers. At some point, the NPO will send out emails asking for donations to their cause. Only a certain percentage of those emailed will donate. This percentage is often called a conversion rate, and a simple equation to describe it is:
 
-<p style="margin-left: 40px">D (number of donations) = S (signups) * C (conversion rate)</p>
+<p style="margin-left: 40px; color: gray;">D (number of donations) = S (signups) * C (conversion rate)</p>
 
 For our task, C is mostly beyond our control (it will be up the the NPO to manage this.) So it seems that we can only increase the number of donations by increasing S, the number of email signups. We talked about that in the previous section.
 
@@ -49,18 +49,18 @@ How can we do this? Well, the reason we thought to consider income above is beca
 
 If we assume that on average people will donate an amount equaling, say, .2% of their annual income, then it becomes clear that, all else being equal, sending canvassers to talk to subway riders with high incomes will effect larger donations:
 
-<p style="margin-left: 40px">A (amount donated) = G (gross annual income) * .2% * D (number of donations)</p>
+<p style="margin-left: 40px; color: gray;">A (amount donated) = G (gross annual income) * .2% * D (number of donations)</p>
 
 So, given our assumptions, "income" is another factor that we should include in our analysis.
 
 Combining our equations for Signups, Donations, and Amount we see that:
 
-<p style="margin-left: 40px">A = .2% * G (gross income) * T (number talked to/hour) * I (percent interested) * H (hours) * C (conversion rate)</p>
+<p style="margin-left: 40px; color: gray;">A = .2% * G (gross income) * T (number talked to/hour) * I (percent interested) * H (hours) * C (conversion rate)</p>
 
 Now we can easily answer questions like “how good is a subway station where riders have high interest in the mission but low income?” For two stations with average rider income of $45k and $80k, and with 6% and 3% of riders interested in the mission, respectively, our donation income is:
 
-<p style="margin-left: 40px">A (amount) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $86.20 (and 72 signups)</p>
-<p style="margin-left: 40px">A (amount) = .2% * $80000 * 200 * 3% * 6 hours * 1% conversion rate = $57.60 (and 36 signups)</p>
+<p style="margin-left: 40px; color: gray;">A (amount) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $86.20 (and 72 signups)</p>
+<p style="margin-left: 40px; color: gray;">A (amount) = .2% * $80000 * 200 * 3% * 6 hours * 1% conversion rate = $57.60 (and 36 signups)</p>
 
 Despite the first group having much lower average income, we get more donation money and more email signups from that group because of their high level of interest in the NPO’s cause. In fact, it’s obvious from our equation that if Group A has double the interest of Group B, we will get more signups and donations from them unless their income is fully **half** that of Group B.
 
