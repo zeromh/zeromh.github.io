@@ -4,14 +4,14 @@ title: Data Science - Defining a Goal
 ---
 The hardest part of an open-ended data science project is often defining concretely what your goal is.
 
-For example, let’s say you’re tasked with finding the best subway stations in New York City for a non-profit organization to send canvassers to (the canvassers will solicit email addresses and/or donations.) How do you do this?
+For example, let’s say a non-profit organization hires you to find the best subway stations in New York City to send canvassers to (the canvassers will solicit email addresses and/or donations for the organization.) How do you do this?
 
-Perhaps you want to find stations with lots of traffic, where the subway riders are interested in the NPO’s mission. This is simple enough, but how do you deal with tradeoffs between these factors - such as stations with middling traffic, but high interest in the cause? Or stations with high traffic, but where the ridership has a low income for making donations? You’ve been tasked with finding the “best” subway stations, but the hard part is defining what “best” means.
+Perhaps you want to find stations with lots of traffic, where the subway riders are interested in the NPO’s mission. This is simple enough, but how do you deal with tradeoffs between these factors - such as stations with middling traffic, but where the riders have high interest in the mission? Or stations with high traffic, but where the ridership has a low income for making donations? You’ve been tasked with finding the “best” subway stations, but the hard part is defining what “best” means.
 
-Here are some thoughts on how you can do that, for any data science project.
+Here is a way to define a concrete, useful goal for almost any data science project.
 
 ## So Many Variables!
-My first project at Metis Data Science Bootcamp was very similar to the above problem. I worked with a team using passenger entrance/exit data from the New York subway system to determine the optimal placement of street canvassers. There were a lot of factors we considered using in our selection process:
+My first project at Metis Data Science Bootcamp was very similar to the above problem. I worked with a team using [passenger entrance/exit data] (http://web.mta.info/developers/turnstile.html) from the New York subway system to determine the optimal placement of canvassers. There were a lot of factors we considered using in our selection process:
 
 
 - volume of foot traffic into/out of the subway stations
@@ -20,13 +20,13 @@ My first project at Metis Data Science Bootcamp was very similar to the above pr
 - station proximity to tech hubs in NYC (this was relevant to the mission of the NPO, which was to increase representation of women in tech)
 - passenger responsiveness to solicitation (probably low during rush hour, higher at other times)
 
-Ultimately what we need is a list of the top 15 or so stations to send canvassers to. This means we need to rank each station. But how do we determine a rank from all of the variables that we want to consider? As mentioned above, how do we deal with tradeoffs between, say traffic and income?
+This is a lot of factors to weigh against each other! It's easy to get lost in a sea of tradeoffs and what-ifs, and still not find any way to concretely define your goal. So what's the solution?
 
 ## A Solution
-One approach is to write simple equations that describe what variables affect your outcomes. This will be somewhat theoretical and you will have to make some assumptions, but the method is useful even if it isn’t perfect.
+One approach is to write simple equations that describe your outcomes in terms of other variables. This will be somewhat theoretical and you will have to make some assumptions, but the method is useful even if it isn’t perfect.
 
 ### Email Signups
-Let’s make a reasonable assumption: the number of people a street team signs up in a day is roughly equal to the number of people they talk to in an hour, times the percentage of people who are interested in the cause enough to sign up, times the number of hours the street team is out working. In other words:
+Let’s make a reasonable assumption: the number of people a street team signs up in a day is roughly equal to the number of people they talk to in an hour, times the percentage of people who are interested in the mission enough to sign up, times the number of hours the street team is out working. In other words:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S (signups) = T (number talked to per hour) * I (percent interested) * H (hours)
 
@@ -34,28 +34,30 @@ Let’s make a reasonable assumption: the number of people a street team signs u
 
 If we assume that 1) H will be set by the NPO's budget, and 2) our subway stations will have at least 200 people passing through per hour (an easy minimum to meet in NYC), then the only variable we can influence in this equation is I (interest), which we can do by targeting parts of the city where subway riders will be more interested in supporting women in tech.
 
-From our equation we can also see that if we double the percentage of interested riders, we will double the number of signups! So “interest in the cause” is a factor we should definitely focus on.
+From our equation we can also see that if we double the percentage of interested riders, we will double the number of signups! So “interest in the mission” is a factor we should definitely focus on.
 
 ### Donations
-So let’s say we’ve gained lots of email subscribers. At some point, the NPO will send out emails asking for donations to their cause. Only a certain percentage of those emailed will donate. This percentage is often called a conversion rate, and the simple equation to describe it is:
+So let’s say we’ve gained lots of email subscribers. At some point, the NPO will send out emails asking for donations to their cause. Only a certain percentage of those emailed will donate. This percentage is often called a conversion rate, and a simple equation to describe it is:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D (number of donations) = S (signups) * C (conversion rate)
 
-The NPO will be able to affect the conversion rate via the way they handle their email list and keep their subscribers happy. But from our perspective, C is fairly set. As consulting data scientists, we can only increase the number of donations by increasing S, the number of email signups. We talked about that in the previous section.
+For our task, C is mostly beyond our control (it will be up the the NPO to manage this.) So it seems that we can only increase the number of donations by increasing S, the number of email signups. We talked about that in the previous section.
 
 That said, with the proper subway station recommendations we can probably affect the average **dollar amount** of each donation received.
 
-The reason we thought to consider income above was because we thought that it might be correlated with the amount that someone donates. This assumption may not be true, but let's explore where it takes us. If we assume that a person might give a donation equaling .2% of their annual income, then it becomes clear that, all else being equal, sending street teams to talk to subway riders with high incomes will effect larger donations:
+How can we do this? Well, the reason we thought to consider income above is because income **might** be correlated with the amount that someone donates. For a serious project this is something that we would have to verify. But for now let's take the assumption as true and explore where it leads.
+
+If we assume that on average people will donate an amount equaling, say, .2% of their annual income, then it becomes clear that, all else being equal, sending canvassers to talk to subway riders with high incomes will effect larger donations:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A (amount donated) = G (gross annual income) * .2% * D (number of donations)
 
-Again, this is predicated on the assumption that income is correlated with donation size. For a serious project this is something that we would have to verify. But given that assumption we can see that donation size is directly proportional to income, and so that makes income another factor we should focus on in our analysis.
+So, given our assumptions, "income" is another factor that we should include in our analysis.
 
 Combining our equations for Signups, Donations, and Amount we see that:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A = .2% * G (gross income) * T (number talked to/hour) * I (percent interested) * H (hours) * C (conversion rate)
+>A = .2% * G (gross income) * T (number talked to/hour) * I (percent interested) * H (hours) * C (conversion rate)
 
-Now we can easily answer questions like “how good is a subway station where riders have high interest in the cause but low income?” For two stations with average rider income of $45k and $80k, and with percentage of riders interested in the cause at 6% and 3%, respectively:
+Now we can easily answer questions like “how good is a subway station where riders have high interest in the mission but low income?” For two stations with average rider income of $45k and $80k, and with 6% and 3% of riders interested in the mission, respectively, our donation income is:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A (amount) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $86.20 (and 72 signups)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A (amount) = .2% * $80000 * 200 * 3% * 6 hours * 1% conversion rate = $57.60 (and 36 signups)
