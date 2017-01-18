@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Science: Defining a Goal
+title: Data Science - Defining a Goal
 ---
 ## The Problem
 The hardest part of an open-ended data science project is often defining concretely what your goal is.
