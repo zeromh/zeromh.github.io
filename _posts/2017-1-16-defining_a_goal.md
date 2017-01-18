@@ -11,7 +11,7 @@ Perhaps you want to find stations with lots of traffic, where the subway riders 
 Here is a way to define a concrete, useful goal for almost any data science project.
 
 ## So Many Variables!
-My first project at Metis Data Science Bootcamp was very similar to the above problem. I worked with a team using [passenger entrance/exit data] (http://web.mta.info/developers/turnstile.html) from the New York subway system to determine the optimal placement of canvassers. There were a lot of factors we considered using in our selection process:
+My first project at Metis Data Science Bootcamp was very similar to the above problem. I worked with a team using <a href="http://web.mta.info/developers/turnstile.html">passenger entrance/exit data</a> from the New York subway system to determine the optimal placement of canvassers. There were a lot of factors we considered using in our selection process:
 
 
 - volume of foot traffic into/out of the subway stations
@@ -59,7 +59,7 @@ Combining our equations for Signups, Donations, and Amount we see that:
 
 Now we can easily answer questions like “how good is a subway station where riders have high interest in the mission but low income?” Imagine subway stations A and B, where we predict rider income of $45k and $80k, with 6% and 3% of riders interested in the mission, respectively. Our donation amount, A, is:
 
-<p style="margin-left: 40px; color: gray;">A(station A) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $86.20 (and 72 signups)</p>
+<p style="margin-left: 40px; color: gray;">A(station A) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $64.80 (and 72 signups)</p>
 <p style="margin-left: 40px; color: gray;">A(station B) = .2% * $80000 * 200 * 3% * 6 hours * 1% conversion rate = $57.60 (and 36 signups)</p>
 
 Despite station A being associated with much lower income, we predict more donation money and more email signups from those riders because of their high level of interest in the NPO’s cause. In fact, the form of our equation makes this obvious - since station B's rider interest is half that of station A, station B riders would need to have **double** the income just to break even.
