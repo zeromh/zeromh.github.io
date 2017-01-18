@@ -39,7 +39,7 @@ From our equation we can also see that if we double the percentage of interested
 ### Donations
 So let’s say we’ve gained lots of email subscribers. At some point, the NPO will send out emails asking for donations to their cause. Only a certain percentage of those emailed will donate. This percentage is often called a conversion rate, and a simple equation to describe it is:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D (number of donations) = S (signups) * C (conversion rate)
+>D (number of donations) = S (signups) * C (conversion rate)
 
 For our task, C is mostly beyond our control (it will be up the the NPO to manage this.) So it seems that we can only increase the number of donations by increasing S, the number of email signups. We talked about that in the previous section.
 
