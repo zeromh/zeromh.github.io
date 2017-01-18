@@ -57,12 +57,12 @@ Combining our equations for Signups, Donations, and Amount we see that:
 
 <p style="margin-left: 40px; color: gray;">A = .2% * G (gross income) * T (number talked to/hour) * I (percent interested) * H (hours) * C (conversion rate)</p>
 
-Now we can easily answer questions like “how good is a subway station where riders have high interest in the mission but low income?” For two stations with average rider income of $45k and $80k, and with 6% and 3% of riders interested in the mission, respectively, our donation income is:
+Now we can easily answer questions like “how good is a subway station where riders have high interest in the mission but low income?” Imagine subway stations A and B, where we predict rider income of $45k and $80k, with 6% and 3% of riders interested in the mission, respectively. Our donation amount, A, is:
 
-<p style="margin-left: 40px; color: gray;">A (amount) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $86.20 (and 72 signups)</p>
-<p style="margin-left: 40px; color: gray;">A (amount) = .2% * $80000 * 200 * 3% * 6 hours * 1% conversion rate = $57.60 (and 36 signups)</p>
+<p style="margin-left: 40px; color: gray;">A(station A) = .2% * $45000 * 200 * 6% * 6 hours * 1% conversion rate = $86.20 (and 72 signups)</p>
+<p style="margin-left: 40px; color: gray;">A(station B) = .2% * $80000 * 200 * 3% * 6 hours * 1% conversion rate = $57.60 (and 36 signups)</p>
 
-Despite the first group having much lower average income, we get more donation money and more email signups from that group because of their high level of interest in the NPO’s cause. In fact, it’s obvious from our equation that if Group A has double the interest of Group B, we will get more signups and donations from them unless their income is fully **half** that of Group B.
+Despite station A being associated with much lower income, we predict more donation money and more email signups from those riders because of their high level of interest in the NPO’s cause. In fact, the form of our equation makes this obvious - since station B's rider interest is half that of station A, station B riders would need to have **double** the income just to break even.
 
 ## Final Analysis - The 'Best' Stations
 So here's what our final analysis might look like.
