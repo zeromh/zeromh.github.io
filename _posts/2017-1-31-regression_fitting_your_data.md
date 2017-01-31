@@ -7,13 +7,13 @@ Here's a simple dataset - two variables we'll call x and y.
 
 *scatter plot, no line*
 
-It looks like x and y are related! Let's say we want to use x to predict y. We can use regression to fit a function to the data. Here it is:
+It looks like x and y are related! Let's say we want to use \\( x \\) to predict y. We can use regression to fit a function to the data. Here it is:
 
 *scatter plot with line*
 
 This data was easy to fit, because for every unit increase in x, y also increases some proportionate amount. The equation for the above line is:
 
-$$y = 2x$$
+$$y=2x$$
 
 What do we do when fitting the data isn't so easy, such as when our data looks like:
 
@@ -21,9 +21,9 @@ What do we do when fitting the data isn't so easy, such as when our data looks l
 
 This function doesn't fit the data very well. The equation for this function is:
  
-$$y = -.1x + 81.6$$
+$$y=81.6-.1x$$
 
-From the plot, it doesn't look like y varies as a function of x. Rather, it looks like y varies as a function of x<sup>2</sup>. This means we want to look for a function of the form \\( y=B\_1x^2+Bx+B \\). Our regression program will take care of finding the best B values; we just need to give it an x variable **as well as** an x^2 variable to work with. [[maybe say more here about what this data actually is, i.e. health vs. weight]]
+From the plot, it doesn't look like y varies as a function of x. Rather, it looks like y varies as a function of x<sup>2</sup>. This means we want to look for a function of the form \\( y=B+Bx\_1+B\_2x^2 \\). Our regression program will take care of finding the best B values; we just need to give it an x variable **as well as** an x<sup>2</sup> variable to work with. [[maybe say more here about what this data actually is, i.e. health vs. weight]]
 
 So I square my x values, and now I have data that looks like this. Note the new variable consisting of squared x's:
 
