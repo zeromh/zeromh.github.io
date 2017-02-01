@@ -44,3 +44,10 @@ Let's again use regression to fit a function to this data without doing any kind
 ![x1, x2, y scatter plot with regression plane](/images/straight_plane.png)
 
 The equation for this plane is \\( y=22.6x\_1+14x\_2+316.1 \\), and as you were probably expecting, it isn't a good fit. The bottom right corner of the plane is too high, whereas the top right corner is too low to fit the data correctly.
+
+An experienced researcher might guess that there is an **interaction** between your \\( x \\)) variables. This would mean that, say, task difficulty influences response time, but it influences response time **even more** when you're sleep deprived. Mathematically, an interaction would look something like \\( y=\beta\_0+\beta\_1x+\beta\_2x^2+\beta\_3x\_1x\_2 \\). Notice the last term of the equation has \\( x\_1 \\) and \\( x\_2 \\) multiplied by each other.
+
+Let's add an interaction term to our data, then, and see how it fits. As before, this is as simple as creating a new variable that is the product of of \\( x\_1 \\) and \\( x\_2 \\). When we run regression on our \\( x\_1 \\), \\( x\_2 \\), and \\( x\_1x\_2 \\) variables, we get:
+
+![x1, x2, y scatter plot with interaction regression plane](/images/curve_curve.png)
+
