@@ -5,11 +5,11 @@ title: Regression - Finding a Function to Fit Your Data
 
 Here's a simple dataset - two variables we'll call \\( x \\) and \\( y \\).
 
-*scatter plot, no line*
+![x,y scatter plot](/images/straight_scatter.png)
 
 It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( x \\) to predict \\( y \\). We can use regression to fit a function to the data. Here it is:
 
-*scatter plot with line*
+![x,y scatter plot with regression line](/images/straight_line.png)
 
 This data was easy to fit, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is:
 
@@ -23,7 +23,7 @@ This function doesn't fit the data very well. The equation for this function is:
  
 $$y=81.6-.1x$$
 
-From the plot, it doesn't look like \\( y \\) varies as a function of \\( x \\). Rather, it looks like \\( y \\) varies as a function of \\( x^2 \\). This means we want to look for a function of the form \\( y=B+Bx\_1+B\_2x^2 \\). Our regression program will take care of finding the best \\( B \\) values; we just need to give it an \\( x \\) variable **as well as** an \\( x^2 \\) variable to work with. [[maybe say more here about what this data actually is, i.e. health vs. weight]]
+From the plot, it doesn't look like \\( y \\) varies as a function of \\( x \\). Rather, it looks like \\( y \\) varies as a function of \\( x^2 \\). This means we want to look for a function of the form \\( y=B\_0+Bx\_1+B\_2x^2 \\). Our regression program will take care of finding the best \\( B \\) values; we just need to give it an \\( x \\) variable **as well as** an \\( x^2 \\) variable to work with. [[maybe say more here about what this data actually is, i.e. health vs. weight]]
 
 So I square my \\( x \\) values, and now I have data that looks like this. Note the new variable consisting of squared \\( x \\)'s:
 
@@ -39,4 +39,10 @@ Let's try an example with three variables (two \\( x \\) and one \\( y \\)). Sin
 
 *scatter, no line*
 
+Let's again try to fit a function to this data without doing any kind of transformation beforehand. Here's what we get (
+note that we have a **plane** now, instead of a line, because we're dealing with 3 dimensions.)
 
+*scatter, bad line*
+
+Our function for this plane is \\( y=24.3x1+14.5x2+298.8 \\)  
+Our function doesn't fit the data very well. The bottom right corner of the plane is too high, whereas the top right corner is too low to fit the data correctly.
