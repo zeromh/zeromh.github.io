@@ -7,11 +7,11 @@ Here's a simple dataset - two variables we'll call \\( x \\) and \\( y \\).
 
 ![x,y scatter plot](/images/straight_scatter.png)
 
-It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( x \\) to predict \\( y \\). We can use regression to fit a function to the data. Here it is:
+It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( x \\) to predict \\( y \\). We can use regression to fit a function to the data. Here our function plotted over the data:
 
 ![x,y scatter plot with regression line](/images/straight_line.png)
 
-This data was easy to fit, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is \\( y=2x \\), so we know that for every unit increase in \\( x \\), \\( y \\) increases by about 2.
+A pretty good fit! This was a simple regression problem, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is \\( y=2x \\), so we know that for every unit increase in \\( x \\), \\( y \\) increases by about 2.
 
 What do we do when fitting the data isn't so easy, such as when our data looks like this?
 
@@ -43,11 +43,15 @@ Let's again use regression to fit a function to this data without doing any kind
 
 ![x1, x2, y scatter plot with regression plane](/images/straight_plane.png)
 
-The equation for this plane is \\( y=22.6x\_1+14x\_2+316.1 \\), and as you were probably expecting, it isn't a good fit. The bottom right corner of the plane is too high, whereas the top right corner is too low to fit the data correctly.
+The equation for this function is \\( y=22.6x\_1+14x\_2+316.1 \\), and as you were probably expecting, it isn't a good fit. The bottom right corner of the plane is too high, whereas the top right corner is too low to fit the data correctly.
 
-An experienced researcher might guess that there is an **interaction** between your \\( x \\)) variables. This would mean that, say, task difficulty influences response time, but it influences response time **even more** when you're sleep deprived. Mathematically, an interaction would look something like \\( y=\beta\_0+\beta\_1x+\beta\_2x^2+\beta\_3x\_1x\_2 \\). Notice the last term of the equation has \\( x\_1 \\) and \\( x\_2 \\) multiplied by each other.
+An experienced researcher might guess that there is an **interaction** between your \\( x \\) variables. This would mean that, say, a difficult task increases response time, but it increases response time **even more** when you're sleep deprived. Mathematically, an interaction would look something like \\( y=\beta\_0+\beta\_1x+\beta\_2x\_2+\beta\_3x\_1x\_2 \\). Notice the last term of the equation has \\( x\_1 \\) and \\( x\_2 \\) multiplied by each other.
 
 Let's add an interaction term to our data, then, and see how it fits. As before, this is as simple as creating a new variable that is the product of of \\( x\_1 \\) and \\( x\_2 \\). When we run regression on our \\( x\_1 \\), \\( x\_2 \\), and \\( x\_1x\_2 \\) variables, we get:
 
 ![x1, x2, y scatter plot with interaction regression plane](/images/curve_plane.png)
 
+This is a good fit! The function now **bends** to accomodate the interaction between task difficulty and sleep deprivation. Look at the bottom of the plot - for someone who has had plenty of sleep, as task difficulty increases, response time only increases a little bit. But at the top of the plot we can see that for someone who is sleep deprived, as task difficulty increases, response time increases a **lot.**
+
+### Conclusion
+These are just a few common transformations you might need to do to your data to fit a regression. It's also common to do a \\( \log \\) transformation, or try higher-order polynomial features like \\) x^3 \\) or \\( x^4 \\). I hope this helps build your intuition about how to do this and why it works!
