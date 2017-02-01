@@ -11,23 +11,17 @@ It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( 
 
 ![x,y scatter plot with regression line](/images/straight_line.png)
 
-This data was easy to fit, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is:
+This data was easy to fit, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is \\( y=2x \\), so we know that for every unit increase in \\( x \\), \\( y \\) increases about 2.
 
-$$y=2x$$
+What do we do when fitting the data isn't so easy, such as when our data looks like this?
 
-What do we do when fitting the data isn't so easy, such as when our data looks like:
+![x,y quadratic scatter plot](/images/curve_line.png)
 
-*quadratic scatter plot with line*
-
-This function doesn't fit the data very well. The equation for this function is:
- 
-$$y=81.6-.1x$$
-
-From the plot, it doesn't look like \\( y \\) varies as a function of \\( x \\). Rather, it looks like \\( y \\) varies as a function of \\( x^2 \\). This means we want to look for a function of the form \\( y=B\_0+Bx\_1+B\_2x^2 \\). Our regression program will take care of finding the best \\( B \\) values; we just need to give it an \\( x \\) variable **as well as** an \\( x^2 \\) variable to work with. [[maybe say more here about what this data actually is, i.e. health vs. weight]]
+The equation for this function is \\( y=81.6-.1x \\), and it **doesn't** fit the data very well. Rather than \\( y \\) varying as a function of \\( x \\), it looks like \\( y \\) varies as a function of **\\( x^2 \\)**. This means we want to look for a function of the form \\( y=B\_0+Bx\_1+B\_2x^2 \\). Our regression program will take care of finding the best \\( B \\) values; we just need to give it an \\( x \\) variable **as well as** an \\( x^2 \\) variable to work with.
 
 So I square my \\( x \\) values, and now I have data that looks like this. Note the new variable consisting of squared \\( x \\)'s:
 
-*table of data with x, x^2, and y*
+![table of data](/images/x_squared_data.png)
 
 I run regression to predict \\( y \\) in terms of these two other variables, and I get:
 
