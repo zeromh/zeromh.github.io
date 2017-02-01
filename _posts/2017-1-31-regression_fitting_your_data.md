@@ -49,5 +49,5 @@ An experienced researcher might guess that there is an **interaction** between y
 
 Let's add an interaction term to our data, then, and see how it fits. As before, this is as simple as creating a new variable that is the product of of \\( x\_1 \\) and \\( x\_2 \\). When we run regression on our \\( x\_1 \\), \\( x\_2 \\), and \\( x\_1x\_2 \\) variables, we get:
 
-![x1, x2, y scatter plot with interaction regression plane](/images/curve_curve.png)
+![x1, x2, y scatter plot with interaction regression plane](/images/curve_plane.png)
 
