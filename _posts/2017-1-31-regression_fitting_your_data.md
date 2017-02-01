@@ -3,11 +3,11 @@ layout: post
 title: Regression - Finding a Function to Fit Your Data
 ---
 
-Here's a simple dataset - two variables we'll call \\( x \\) and \\( y \\).
+Here's a simple dataset - just two variables that we'll call \\( x \\) and \\( y \\).
 
 ![x,y scatter plot](/images/straight_scatter.png)
 
-It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( x \\) to predict \\( y \\). We can use regression to fit a function to the data. Here our function plotted over the data:
+It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( x \\) to predict \\( y \\). We can use regression to fit a function to the data. Here is our function plotted over the data:
 
 ![x,y scatter plot with regression line](/images/straight_line.png)
 
@@ -47,11 +47,13 @@ The equation for this function is \\( y=22.6x\_1+14x\_2+316.1 \\), and as you we
 
 An experienced researcher might guess that there is an **interaction** between your \\( x \\) variables. This would mean that, say, a difficult task increases response time, but it increases response time **even more** when you're sleep deprived. Mathematically, an interaction would look something like \\( y=\beta\_0+\beta\_1x+\beta\_2x\_2+\beta\_3x\_1x\_2 \\). Notice the last term of the equation has \\( x\_1 \\) and \\( x\_2 \\) multiplied by each other.
 
-Let's add an interaction term to our data, then, and see how it fits. As before, this is as simple as creating a new variable that is the product of of \\( x\_1 \\) and \\( x\_2 \\). When we run regression on our \\( x\_1 \\), \\( x\_2 \\), and \\( x\_1x\_2 \\) variables, we get:
+Let's add an interaction term to our data, then, and see how it fits. As before, this is as simple as creating a new variable that is the product of of \\( x\_1 \\) and \\( x\_2 \\). When we run regression to predict \\( y \\) in terms of \\( x\_1 \\), \\( x\_2 \\), and \\( x\_1x\_2 \\), we get:
 
 ![x1, x2, y scatter plot with interaction regression plane](/images/curve_plane.png)
 
-This is a good fit! The function now **bends** to accomodate the interaction between task difficulty and sleep deprivation. Look at the bottom of the plot - for someone who has had plenty of sleep, as task difficulty increases, response time only increases a little bit. But at the top of the plot we can see that for someone who is sleep deprived, as task difficulty increases, response time increases a **lot.**
+This is a good fit! The function now **bends** to show the interaction between task difficulty and sleep deprivation. Look at the bottom of the plot - for someone who has had plenty of sleep, as task difficulty increases, response time only increases a little bit. But at the top of the plot we can see that for someone who is sleep deprived, as task difficulty increases, response time increases a **lot.**
 
 ### Conclusion
-These are just a few common transformations you might need to do to your data to fit a regression. It's also common to do a \\( \log \\) transformation, or try higher-order polynomial features like \\) x^3 \\) or \\( x^4 \\). I hope this helps build your intuition about how to do this and why it works!
+These are just a few common transformations you might need to do to your data to fit a regression. It's also common to do a \\( \log \\) transformation, or create higher-order polynomial variables like \\( x^3 \\) or \\( x^4 \\).
+
+I hope this helps build your intuition about using regression to fit a function to your data!
