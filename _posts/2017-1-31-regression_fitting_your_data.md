@@ -17,7 +17,7 @@ What do we do when fitting the data isn't so easy, such as when our data looks l
 
 ![x,y quadratic scatter plot](/images/curve_line.png)
 
-The equation for this function is \\( y=81.6-.1x \\), and it **doesn't** fit the data very well. Rather than \\( y \\) varying as a function of \\( x \\), it looks like \\( y \\) varies as a function of **\\( x^2 \\)**. This means we want to look for a function of the form \\( y=\beta\_0+\beta\_1x+\beta\_2x^2 \\). Our regression software will take care of finding the best \\( \beta \\) values; we just need to give it an \\( x \\) variable **as well as** an \\( x^2 \\) variable to work with.
+The equation for this function is \\( y\hat=81.6-.1x \\), and it **doesn't** fit the data very well. Rather than \\( y \\) varying as a function of \\( x \\), it looks like \\( y \\) varies as a function of **\\( x^2 \\)**. This means we want to look for a function of the form \\( y=\beta\_0+\beta\_1x+\beta\_2x^2 \\). Our regression software will take care of finding the best \\( \beta \\) values; we just need to give it an \\( x \\) variable **as well as** an \\( x^2 \\) variable to work with.
 
 So I square my \\( x \\) values, and now I have data that looks like this:
 
