@@ -11,7 +11,7 @@ It looks like \\( x \\) and \\( y \\) are related! Let's say we want to use \\( 
 
 ![x,y scatter plot with regression line](/images/straight_line.png)
 
-A pretty good fit! This was a simple regression problem, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is \\( \haty=2x \\), so we know that for every unit increase in \\( x \\), \\( y \\) increases by about 2.
+A pretty good fit! This was a simple regression problem, because for every unit increase in \\( x \\), \\( y \\) also increases some proportionate amount. The equation for the above line is \\( \hat  y=2x \\), so we know that for every unit increase in \\( x \\), \\( y \\) increases by about 2.
 
 What do we do when fitting the data isn't so easy, such as when our data looks like this?
 
@@ -43,7 +43,7 @@ Let's again use regression to fit a function to this data without doing any kind
 
 ![x1, x2, y scatter plot with regression plane](/images/straight_plane.png)
 
-The equation for this function is \\( \haty=22.6x\_1+14x\_2+316.1 \\), and as you were probably expecting, it isn't a good fit. The bottom right corner of the plane is too high, whereas the top right corner is too low to fit the data correctly.
+The equation for this function is \\( \hat y=22.6x\_1+14x\_2+316.1 \\), and as you were probably expecting, it isn't a good fit. The bottom right corner of the plane is too high, whereas the top right corner is too low to fit the data correctly.
 
 An experienced researcher might guess that there is an **interaction** between your \\( x \\) variables. This would mean that, say, a difficult task increases response time, but it increases response time **even more** when you're sleep deprived. Mathematically, an interaction would look something like \\( y=\beta\_0+\beta\_1x\_1+\beta\_2x\_2+\beta\_3x\_1x\_2 \\). Notice the last term of the equation has \\( x\_1 \\) and \\( x\_2 \\) multiplied by each other.
 
