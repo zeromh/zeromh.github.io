@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Regression - Finding a Function to Fit Your Data
+thumbnail: https://zeromh.github.io/images/curve_plane.png
 ---
 
 Here's a simple dataset - just two variables that we'll call \\( x \\) and \\( y \\).
