@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Promoting Positive Climate Change Conversations via Twitter
-thumbnail: /images/network_with_community_names.png
+thumbnail: https://zeromh.github.io/images/network_with_community_names.png
 ---
 
 For my final project of the Metis Data Science program, I investigated the climate change conversations taking place on Twitter in March 2017. The 1 million tweets that I looked at were a snapshot in time - many users talked about EPA head Scott Pruitt's denial that CO2 causes global warming, or the critical condition of Australia's Great Barrier Reef. Sub-communities were also apparent within the greater conversation, including a group of climate change deniers who stood out from the rest.
