@@ -8,7 +8,7 @@ For my final project of the Metis Data Science program, I investigated the clima
 
 <div class="image" align="center">
 	<a href="/images/network_with_influencer_names.png" target="_blank">
-        <img src="/images/network_with_influencer_names.png" alt="Most influential users"></a>
+        <img src="/images/network_with_influencer_names_small.png" alt="Most influential users"></a>
         <div style="font-style: italic; color: gray; font-size: 12pt">Twitter users who are the most influential in the climate change conversation (click to enlarge)</div>
 </div>
 
