@@ -132,4 +132,4 @@ These users can be very important to find if you're doing outreach and advocacy.
 
 This was a really exciting project to work on. I learned a lot about network analysis (I didn't know anything when I started), and it's amazing how much insight I was able to find in this data once I'd structured it based on communities and community discussions. Thanks for reading!
 
-\(Code for this project can be found at my Github [here](https://github.com/zeromh/proj5_climate_change)\)
+\(Code for this project can be found in my Github repo [here](https://github.com/zeromh/proj5_climate_change)\)
